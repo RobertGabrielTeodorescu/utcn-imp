@@ -38,7 +38,7 @@ private:
     enum class Kind {
       FUNC,
       PROTO,
-      ARG,
+      ARG
     } Kind;
 
     union {
@@ -127,7 +127,8 @@ private:
   void LowerBinaryExpr(const Scope &scope, const BinaryExpr &expr);
   /// Lowers a call expression.
   void LowerCallExpr(const Scope &scope, const CallExpr &expr);
-
+  /// Lowers an integer expression.
+  void LowerIntegerExpr(const Scope &scope, const IntegerExpr &expr);
   /// Lowers a function declaration.
   void LowerFuncDecl(const Scope &scope, const FuncDecl &funcDecl);
 
@@ -139,6 +140,8 @@ private:
   void EmitPop();
   /// Emit a call instruction.
   void EmitCall(unsigned nargs);
+  // Push integer 
+  void EmitInteger(int64_t number);
   /// Push a function address to the stack.
   void EmitPushFunc(Label entry);
   /// Push a prototype to the stack.

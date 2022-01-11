@@ -1,0 +1,8 @@
+func print_int(a:int):int = "print_int"
+func read_int():int = "read_int"
+
+func sum(a:int):int {
+	return a+125
+}
+
+print_int(sum(read_int()))

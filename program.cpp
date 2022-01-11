@@ -1,7 +1,7 @@
 // This file is part of the IMP project.
 
 #include "program.h"
-
+#include <ostream>
 
 
 // -----------------------------------------------------------------------------
@@ -18,6 +18,7 @@ std::ostream &operator<<(std::ostream &os, Opcode op)
     case Opcode::JUMP_FALSE: return os << "JUMP_FALSE";
     case Opcode::JUMP:       return os << "JUMP";
     case Opcode::STOP:       return os << "STOP";
+    case Opcode::PUSH_INT:    return os << "PUSH_INT";
   }
   assert(!"invalid opcode");
 }

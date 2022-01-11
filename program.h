@@ -6,7 +6,6 @@
 #include <cstdint>
 #include <cstring>
 #include <vector>
-#include <ostream>
 
 
 
@@ -16,7 +15,8 @@
 enum class Opcode : uint8_t {
   PUSH_FUNC,
   PUSH_PROTO,
-
+  PUSH_INT, 
+  
   PEEK,
   POP,
   CALL,
@@ -28,11 +28,6 @@ enum class Opcode : uint8_t {
   JUMP,
   STOP
 };
-
-/**
- * Prints the opcode to a stream, for debugging.
- */
-std::ostream &operator<<(std::ostream &os, Opcode op);
 
 
 /**
